@@ -17,18 +17,18 @@ jobs:
 
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: | 
-        docker build . --file Dockerfile --tag my-dockerized-node-app:$(date +%s)
+    # - uses: actions/checkout@v4
+    # - name: Build the Docker image
+    #   run: | 
+    #     docker build . --file Dockerfile --tag my-dockerized-node-app:$(date +%s)
 
     - uses : mr-smithers-excellent/docker-build-push@v6
       name : Build and Push Docker Images
       with:  
         image: autobot26/docker-images
+        dockerfile: Dockerfile
         tags: v1, latest
         registry: docker.io
-        dockerfile: Dockerfile.ci
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
           
