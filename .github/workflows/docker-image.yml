@@ -22,8 +22,8 @@ jobs:
       run: | 
         docker build . --file Dockerfile --tag my-dockerized-node-app:$(date +%s)
 
-    - uses : Build and Push Docker Images
-      name : mr-smithers-excellent/docker-build-push@v6
+    - uses : mr-smithers-excellent/docker-build-push@v6
+      name : Build and Push Docker Images
       with:  
         image: autobot26/docker-images
         tags: v1, latest
