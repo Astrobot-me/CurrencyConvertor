@@ -26,7 +26,6 @@ jobs:
       name : Build and Push Docker Images
       with:  
         image: autobot26/docker-images
-        dockerfile: Dockerfile
         tags: v1, latest
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
