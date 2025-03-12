@@ -34,7 +34,7 @@ jobs:
       with:  
         image: autobot26/docker-images
         registry: docker.io
-        dockerfile: $(pwd)/Dockerfile
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
           
