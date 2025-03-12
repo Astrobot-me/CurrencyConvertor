@@ -23,11 +23,11 @@ jobs:
     #     docker build . --file Dockerfile --tag my-dockerized-node-app:$(date +%s)
 
     - uses : mr-smithers-excellent/docker-build-push@v6
-      name : Build and Push Docker Images
+      name : Build and Push Docker Images To Docker Hub 
       with:  
         image: autobot26/docker-images
         tags: v1, latest
-        dockerfile : Dockerfile.ci
+        dockerfile : ../../Dockerfile.ci
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
