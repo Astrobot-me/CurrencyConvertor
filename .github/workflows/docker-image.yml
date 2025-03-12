@@ -21,3 +21,16 @@ jobs:
     - name: Build the Docker image
       run: | 
         docker build . --file Dockerfile --tag my-dockerized-node-app:$(date +%s)
+
+    - uses : Build and Push Docker Images
+      name : mr-smithers-excellent/docker-build-push@v6
+      with:  
+        image: autobot26/docker-images
+        tags: v1, latest
+        registry: docker.io
+        dockerfile: Dockerfile.ci
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+          
+
+    
