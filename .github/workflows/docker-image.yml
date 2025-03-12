@@ -22,6 +22,13 @@ jobs:
     #   run: | 
     #     docker build . --file Dockerfile --tag my-dockerized-node-app:$(date +%s)
 
+    - name: Check Files
+      run: ls -l
+
+    - name : Repository Checkout 
+      uses: actions/checkout@v4 
+
+
     - uses : mr-smithers-excellent/docker-build-push@v6
       name : Build and Push Docker Images To Docker Hub 
       with:  
