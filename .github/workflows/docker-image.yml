@@ -26,9 +26,6 @@ jobs:
       name : Build and Push Docker Images To Docker Hub 
       with:  
         image: autobot26/docker-images
-        tags: v1, latest
-        dockerfile : Dockerfile.ci
-        directory : . 
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
